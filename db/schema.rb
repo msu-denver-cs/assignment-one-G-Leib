@@ -10,27 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_16_182026) do
+ActiveRecord::Schema.define(version: 2019_09_22_181347) do
 
-  create_table "car_makes", force: :cascade do |t|
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.integer "vin"
+    t.integer "make_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["make_id"], name: "index_cars_on_make_id"
+  end
+
+  create_table "makes", force: :cascade do |t|
     t.string "name"
     t.string "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "car_parts", force: :cascade do |t|
-    t.string "name"
+  create_table "part_cars", force: :cascade do |t|
     t.integer "car_id"
+    t.integer "part_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_car_parts_on_car_id"
+    t.index ["car_id"], name: "index_part_cars_on_car_id"
+    t.index ["part_id"], name: "index_part_cars_on_part_id"
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string "make"
-    t.string "model"
-    t.integer "vin"
+  create_table "parts", force: :cascade do |t|
+    t.string "name"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

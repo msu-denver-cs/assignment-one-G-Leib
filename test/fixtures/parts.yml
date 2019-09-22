@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  vin: 1
-  make: one
+  quantity: 1
 
 two:
   name: MyString
-  vin: 1
-  make: two
+  quantity: 1
