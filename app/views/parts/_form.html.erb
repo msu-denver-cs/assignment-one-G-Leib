@@ -21,11 +21,6 @@
     <%= form.number_field :quantity %>
   </div>
 
-  <div class="field">
-    <%= form.label :car_id %>
-    <%= form.collection_check_boxes(:car_ids, @cars, :id, :name) %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
