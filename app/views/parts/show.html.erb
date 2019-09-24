@@ -10,9 +10,10 @@
   <%= @part.quantity %>
 </p>
 
+<p><strong>Cars used in:</strong></p>
 <ul>
   <% @part.cars.each do |car| %>
-    <li><%= car.name %></li>
+    <li><%= car.make.name %> <%= car.name %></li>
   <% end %>
 </ul>
 

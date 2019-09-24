@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Vin</th>
       <th>Make</th>
+      <th>Parts</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,10 @@
         <td><%= car.name %></td>
         <td><%= car.vin %></td>
         <td><%= car.make.name %></td>
+        <td><ul><% car.parts.each do |part| %>
+          <li><%= part.name %></li>
+          <% end %>
+          </ul></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>

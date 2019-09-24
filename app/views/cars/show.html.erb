@@ -15,6 +15,7 @@
   <%= @car.make.name %>
 </p>
 
+<p><strong>Required parts:</strong></p>
 <ul>
   <% @car.parts.each do |part| %>
     <li><%= part.name %></li>
